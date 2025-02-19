@@ -6,9 +6,9 @@
         "type": "HarmonyOS",
         "material": {
           "certpath": "C:\\Users\\Administrator\\.ohos\\config\\default_WeChatNe_HOqHmlr87SitXxk15yxu90NDaj3vn6IImy_NxVLKa5o=.cer",
-          "storePassword": "0000001B2E9C0F3511FA9367C0065A0C3FE48A6B4A9EF1B79FAA51E07FCD4723FD51C1568AB3F3A0F26733",
+          "storePassword": "0000001BD7EA7CEDB04314569ED75D0B72790967277DA06800F93879F4D47F3D36F5A0868F07FD31C7202B",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B3C8A36026CF9781CBD57594575A8C55FF1786477A3CD4F5947B1D4C66987538EA28D208F887B66",
+          "keyPassword": "0000001B4FA9C825EBFDB99F2A1790411D8AC0115BA65EAD2E99B52D11C4C89673A7326DDC288D7B82573C",
           "profile": "C:\\Users\\Administrator\\.ohos\\config\\default_WeChatNe_HOqHmlr87SitXxk15yxu90NDaj3vn6IImy_NxVLKa5o=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\Administrator\\.ohos\\config\\default_WeChatNe_HOqHmlr87SitXxk15yxu90NDaj3vn6IImy_NxVLKa5o=.p12"
