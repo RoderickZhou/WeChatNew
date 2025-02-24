@@ -1,5 +1,14 @@
+import { DafaultUserList, UserInfo } from '../models/users'
+
 @Component
 struct Connect {
+  @State
+  filterList: UserInfo[] = []
+
+  aboutToAppear(): void {
+    this.filterList = DafaultUserList
+  }
+
   build() {
     Column() {
       //搜索栏
@@ -17,15 +26,15 @@ struct Connect {
 
       //联系人列表
       List() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], () => {
+        ForEach(this.filterList, (item: UserInfo) => {
           ListItem() {
             Row({ space: 10 }) {
-              Image("https://img2.baidu.com/it/u=2778471297,524433918&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500")
+              Image(item.avatar)
                 .width(30)
                 .height(30)
                 .borderRadius(4)
               Column() {
-                Text("小趴菜")
+                Text(item.username)
                   .fontSize(14)
                   .fontColor($r("app.color.text_primary"))
               }
@@ -50,7 +59,7 @@ struct Connect {
             })
 
           }
-        })
+        }, (item: UserInfo) => item.user_id) //用ID确保唯一性
       }
       .divider({
         strokeWidth: 1,
@@ -75,3 +84,7 @@ struct Connect {
 }
 
 export default Connect
+
+function aboutToAppear(): UserInfo[] {
+  throw new Error("Function not implemented.")
+}
