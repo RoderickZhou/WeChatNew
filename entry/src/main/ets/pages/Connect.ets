@@ -1,4 +1,5 @@
 import { DafaultUserList, UserInfo } from '../models/users'
+import { router } from '@kit.ArkUI'
 
 @Component
 struct Connect {
@@ -74,6 +75,12 @@ struct Connect {
             })
 
           }
+          .onClick(() => {
+            router.pushUrl({
+              url: "pages/ChatDetail/ChatDetail",
+              params: item
+            })
+          })
         }, (item: UserInfo) => item.user_id) //用ID确保唯一性
       }
       .divider({
