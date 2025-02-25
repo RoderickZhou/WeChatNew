@@ -4,19 +4,34 @@ import { DafaultUserList, UserInfo } from '../models/users'
 struct Connect {
   @State
   filterList: UserInfo[] = []
+  @State
+  @Watch("filterName")
+  searchName: string = ""
 
   aboutToAppear(): void {
     this.filterList = DafaultUserList
+  }
+
+  filterName() {
+    this.filterList = DafaultUserList.filter((user: UserInfo) => {
+      return user.username.includes(this.searchName)
+    })
   }
 
   build() {
     Column() {
       //搜索栏
       Row() {
-        Search({ placeholder: "搜索" })
+        Search({ placeholder: "搜索", value: $$this.searchName })
           .backgroundColor($r("app.color.white"))
           .borderRadius(4)
           .height(40)
+          .onSubmit((value: string) => {
+            AlertDialog.show({
+              message: this.searchName
+            })
+            this.searchName = value
+          })
       }
       //.width("100")
       .padding({
