@@ -1,5 +1,6 @@
 import { router } from '@kit.ArkUI'
 import { UserInfo } from '../../models/users'
+import BottomInput from './BottomInput'
 
 @Entry
 @Component
@@ -31,6 +32,9 @@ struct ChatDetail {
         }
       }
       .height(50)
+
+      Blank()
+      BottomInput()
     }
     .height('100%')
     .width('100%')
